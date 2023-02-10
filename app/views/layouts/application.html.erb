@@ -10,13 +10,11 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
+  <body class="bg-dark text-light">
+    <% if user_signed_in? %>
+      <%= render "layouts/navbar" %>
     <% end %>
-    <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
+    <%= render 'layouts/flash_messages' %>
     <%= yield %>
   </body>
 </html>
