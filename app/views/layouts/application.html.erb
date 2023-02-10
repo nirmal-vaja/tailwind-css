@@ -10,7 +10,11 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="bg-dark text-light">
+    <% if user_signed_in? %>
+      <%= render "layouts/navbar" %>
+    <% end %>
+    <%= render 'layouts/flash_messages' %>
     <%= yield %>
   </body>
 </html>
